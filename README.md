@@ -1,21 +1,64 @@
-mart Will
-Project Description
-Smart Will is a blockchain-based platform that enables users to create and manage smart contract-based wills securely. By leveraging decentralized technology, Smart Will ensures that the will execution process is immutable, transparent, and tamper-proof.
+## 📝 SmartWill - A Simple Ethereum Smart Contract for Digital Wills
 
-Project Vision
-The goal of Smart Will is to revolutionize traditional estate planning by providing a trustless and automated solution that removes the need for intermediaries, reduces legal complexities, and ensures asset distribution according to the owner's wishes.
+### 📖 Overview
 
-Future Scope
-Multi-Beneficiary Support: Enable multiple beneficiaries to receive assets based on predefined conditions.
-Time-Based Execution: Implement time-lock functionality to trigger will execution at a specified future date.
-Integration with Digital Identity Solutions: Link will authentication with decentralized identity verification.
-AI-Powered Recommendations: Suggest optimal will structuring based on user preferences and asset types.
-Multi-Chain Support: Extend compatibility with different blockchain networks.
-Key Features
-Immutable Will Storage: Ensures that once recorded, the will cannot be altered or deleted.
-Owner-Only Execution: Only the owner of the will has the right to execute it.
-Tamper-Proof Events: Uses blockchain-based event logging for transparency.
-Smart Contract Automation: Eliminates intermediaries, ensuring the will is executed as per predefined conditions.
-Public Readability: Allows beneficiaries to verify the will's existence and content (if made public by the owner).
-Contract Address
-0x63364693e7f8752b0933ccdec9c9374e3aa66184
+**SmartWill** is a decentralized Ethereum smart contract that allows users to create and store a digital "will" securely on the blockchain. Only the owner (creator) of the will can execute it, ensuring transparency, immutability, and authenticity.
+
+---
+
+### 🔧 Features
+
+* ✅ Immutable storage of a textual will
+* 🔐 Only the owner can execute the will
+* 📡 Emits events on creation and execution
+* 📖 Anyone can view the will content
+
+---
+
+### 🧾 Contract Details
+
+```solidity
+pragma solidity ^0.8.9;
+```
+
+* **Owner:** The person who deploys the contract.
+* **Will Content:** A string message that represents the owner's last will.
+* **Execution Status:** A boolean that prevents multiple executions.
+
+---
+
+### 📦 Functions
+
+| Function                              | Access      | Description                               |
+| ------------------------------------- | ----------- | ----------------------------------------- |
+| `constructor(string memory _content)` | Public      | Sets the will content and owner           |
+| `executeWill()`                       | Owner only  | Executes the will (can only be done once) |
+| `getWillContent()`                    | Public view | Returns the stored will content           |
+
+---
+
+### ⚙️ How to Use
+
+1. **Deploy the contract** using Remix, Hardhat, or any other Ethereum environment.
+2. **Pass the will content** as a constructor parameter (string) during deployment.
+3. Use the `executeWill()` function to finalize the will execution.
+4. Anyone can call `getWillContent()` to view the will text.
+
+---
+
+### 📢 Events
+
+* `WillCreated(address indexed creator, string content)`
+* `WillExecuted(address indexed executor)`
+
+---
+
+### 🛡 License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+### 🙋‍♂️ Author
+
+Crafted with ❤️ for decentralized inheritance systems.
